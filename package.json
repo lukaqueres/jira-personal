@@ -1,0 +1,32 @@
+{
+  "name": "jira-personal",
+  "version": "0.5.0",
+  "description": "Desktop app for displaying data from Jira dashboards",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukaqueres/jira-personal.git"
+  },
+  "keywords": [
+    "Jira",
+    "Desktop",
+    "Personal",
+    "Management"
+  ],
+  "author": "lukaqueres",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/lukaqueres/jira-personal/issues"
+  },
+  "homepage": "https://github.com/lukaqueres/jira-personal#readme",
+  "devDependencies": {
+    "electron": "^25.3.0"
+  },
+  "dependencies": {
+    "jira-client": "^8.2.2"
+  }
+}
