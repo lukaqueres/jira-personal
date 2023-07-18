@@ -1,0 +1,46 @@
+#container {
+    display: flex;
+    height: 100%;
+    text-align: center;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+#method-select {
+    width: 70%;
+    min-width: 40px;
+    font-size: large;
+    margin-block: 2rem;
+}
+
+.login-method {
+    margin-block: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#login, #side-notes {
+    flex: 1;
+    height: 100vh;
+}
+
+#side-notes {
+    background-color: #fb8500;
+    background: linear-gradient(45deg, #fb8500, #ffb703);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: flex-end;
+}
+
+    #side-notes h2 {
+        font-size: xx-large;
+        margin-bottom: 1rem;
+        font-weight: bold;
+    }
+
+    #side-notes > div {
+        margin-bottom: 50vh;
+    }

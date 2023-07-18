@@ -27,6 +27,8 @@
     "electron": "^25.3.0"
   },
   "dependencies": {
-    "jira-client": "^8.2.2"
+    "dotenv": "^16.3.1",
+    "jira-client": "^8.2.2",
+    "jira.js": "^2.19.1"
   }
 }

@@ -1,5 +1,8 @@
 const { app, BrowserWindow, ipcMain, nativeTheme } = require('electron')
+require('dotenv').config();
+const { Version3Client } = require('jira.js')
 
+/*
 app.setUserTasks([
   {
     program: process.execPath,
@@ -10,13 +13,13 @@ app.setUserTasks([
     description: 'Create a new window'
   }
 ])
-
+*/
 const path = require('path')
 
 function createWindow () {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1200,
+    height: 800,
     frame: false,
     titleBarStyle: 'hidden',
     titleBarOverlay: {
@@ -47,6 +50,7 @@ ipcMain.handle('dark-mode:system', () => {
 
 app.whenReady().then(() => {
   createWindow()
+  createLoginwindow()
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
@@ -60,3 +64,35 @@ app.on('window-all-closed', () => {
     app.quit()
   }
 })
+
+
+
+
+const client = new Version3Client({
+  host: 'https://jira.cloudferro.com/',
+  authentication: {
+    personalAccessToken: process.env.TOKEN,
+  },
+});
+
+const createLoginwindow = () => {
+  const loginwin = new BrowserWindow({
+      width: 800,
+      height: 500,
+      frame: false,
+      titleBarStyle: 'hidden',
+      webPreferences: {
+          preload: path.join(__dirname, 'preload.js'),
+      },
+      
+  });
+
+  loginwin.loadFile('login.html');
+  loginwin.setResizable(false);
+}
+
+
+const projects = client
+
+console.log("LOOOOOOOOOOOOOL")
+console.log(client.myself.client.avatars)
