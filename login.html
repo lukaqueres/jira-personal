@@ -14,6 +14,7 @@
             <div class="window-drag"></div>
             <h1>Login</h1>
             <form>
+                <!--
                 <div id="login-methods">
                     <select name="login-method" id="method-select">
                         <option value="pat" selected>Personal Access Token</option> 
@@ -21,16 +22,22 @@
                     </select>
                 </div>
                 <div id="login-contents">
-                    <label for="link">Link to jira dashboard</label>
-                    <input type="text" name="link"  id="input-link">
                     <div id="method-pat" class="login-method">
-                        <input type="text" name="pat" id="input-pat">
                         <label for="pat">Personal Access Token:</label>
+                        <input type="text" name="pat" id="input-pat" placeholder="Input your Personal Access Token">
                     </div>
                     <div id="method-at" class="login-method">
                         <label for="at">Access Token:</label>
-                        <input type="text" name="at" id="input-at">
+                        <input type="text" name="at" id="input-at" placeholder="Input your Access Token">
                     </div>
+                </div>
+                -->
+                <label for="pat">Personal Access Token:</label>
+                <input type="text" name="pat" id="input-pat" placeholder="Input your Personal Access Token">
+                <label for="link">Dashboard URL:</label>
+                <div id="login-button-container">
+                    <input type="text" name="link" placeholder="Url to your jira dashboard" id="input-link">
+                    <button type="submit" id="login-submit">Login</button>
                 </div>
             </form>
         </div>
@@ -38,7 +45,7 @@
             <h2 class="window-undrag">Jira Personal <br> Login</h2>
             <p class="window-undrag">Login using any method to view your jira dashboard</p>
             <div></div>
-            <p id="say-hello"></p>
+            <p id="say-hello" class="minor-text fixed center bottom"></p>
         </div>
     </div>
 

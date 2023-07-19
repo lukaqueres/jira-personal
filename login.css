@@ -44,3 +44,43 @@
     #side-notes > div {
         margin-bottom: 50vh;
     }
+
+input[type="text"] {
+    width: calc( 100% - 2rem );
+    margin: 0.5rem 1rem;
+    box-sizing: border-box;
+    display: block;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: var(--accent-background-color);
+}
+
+#method-select {
+    padding: 0.5rem 1rem;
+    border:1px solid var(--accent-background-color);
+    border-radius: 0.2rem;
+    background-color: transparent;
+}
+
+#login-button-container {
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    margin: 0.5rem;
+}
+
+#input-link {
+    flex: 1;
+    margin: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#login-submit {
+    padding-inline: 1rem;
+    font-size: larger;
+    background-color: #fb8500;
+    border: 1px solid transparent;
+    border-radius: 0 1rem 1rem 0;
+}

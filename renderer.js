@@ -15,5 +15,5 @@ if ( document.getElementById('reset-to-system') ) {
 const d = new Date();
 let hour = d.getHours();
 if ( document.querySelector("#say-hello") ) {
-  document.querySelector("#say-hello").textContent = ( ( d < 6 || d > 18 ) ? "Good Night" : (( d < 12 )? "Good Morning" : "Good day"))
+  document.querySelector("#say-hello").textContent = ( ( hour < 6 || hour > 18 ) ? "Good Night" : (( hour < 12 )? "Good Morning" : "Good day"))
 }
