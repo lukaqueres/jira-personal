@@ -12,16 +12,15 @@
 @media (prefers-color-scheme: dark) {
 
     /* Pallets: 
-    https://coolors.co/03071e-370617-6a040f-9d0208-d00000-dc2f02-e85d04-f48c06-faa307-ffba08
-    https://coolors.co/8ecae6-219ebc-023047-000000-ffb703-fb8500
+    https://coolors.co/00072d-01235c-023e8a-0077b6-0096c7-00b4d8-48cae4-90e0ef-ade8f4-caf0f8
     */
-    :root { --background-color: #03071e; --accent-background-color: #1f1a32; }
+    :root { --background-color: #1C1C3A; --accent-background-color: #00072D; --accent-color: #0077B6;}
 
     body { background-color: var(--background-color); color: white; }
 }
 
 @media (prefers-color-scheme: light) {
-    :root { --background-color: #fdfdfd; --accent-background-color: #e9e9e9;}
+    :root { --background-color: #FFFFFF; --accent-background-color: #e9e9e9; --accent-color: #0077B6;}
 
     body { background: var(--background-color); color: black; }
 }
@@ -40,6 +39,10 @@
 
     -webkit-user-select: none;
     -webkit-app-region: drag;
+}
+
+.window-transparent {
+    background-color: transparent;
 }
 
 .window-drag {

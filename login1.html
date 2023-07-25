@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="stylesheet" type="text/css" href="./login.css">
+</head>
+<body>
+    <!--<div class="titlebar"></div>-->
+        <div id="container">
+        <div id="login">
+            <div class="window-drag"></div>
+            <h1>Login</h1>
+            <form>
+                <!--
+                <div id="login-methods">
+                    <select name="login-method" id="method-select">
+                        <option value="pat" selected>Personal Access Token</option> 
+                        <option value="at">Access Token</option>
+                    </select>
+                </div>
+                <div id="login-contents">
+                    <div id="method-pat" class="login-method">
+                        <label for="pat">Personal Access Token:</label>
+                        <input type="text" name="pat" id="input-pat" placeholder="Input your Personal Access Token">
+                    </div>
+                    <div id="method-at" class="login-method">
+                        <label for="at">Access Token:</label>
+                        <input type="text" name="at" id="input-at" placeholder="Input your Access Token">
+                    </div>
+                </div>
+                -->
+                <label for="pat">Personal Access Token:</label>
+                <input type="text" name="pat" id="input-pat" placeholder="Input your Personal Access Token">
+                <label for="link">Dashboard URL:</label>
+                <div id="login-button-container">
+                    <input type="text" name="link" placeholder="Url to your jira dashboard" id="input-link">
+                    <button type="submit" id="login-submit">Login</button>
+                </div>
+            </form>
+        </div>
+        <div id="side-notes" class="window-drag">
+            <h2 class="window-undrag">Jira Personal <br> Login</h2>
+            <p class="window-undrag">Login using any method to view your jira dashboard</p>
+            <div></div>
+            <p id="say-hello" class="minor-text fixed center bottom"></p>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>

@@ -77,10 +77,13 @@ const client = new Version3Client({
 
 const createLoginwindow = () => {
   const loginwin = new BrowserWindow({
-      width: 800,
-      height: 500,
+      width: 500,
+      height: 600,
       frame: false,
       titleBarStyle: 'hidden',
+      // transparent: true,
+      minHeight: 600,
+      minWidth: 500,
       webPreferences: {
           preload: path.join(__dirname, 'preload.js'),
       },
@@ -88,7 +91,7 @@ const createLoginwindow = () => {
   });
 
   loginwin.loadFile('login.html');
-  loginwin.setResizable(false);
+  // loginwin.setResizable(false);
 }
 
 
