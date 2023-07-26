@@ -1,6 +1,9 @@
-const { app, BrowserWindow, ipcMain, nativeTheme } = require('electron')
+const { app, BrowserWindow, ipcMain, nativeTheme } = require('electron');
+// const JiraApi = require('jira-client');
 require('dotenv').config();
-const { Version3Client } = require('jira.js')
+
+const { Version2Client } = require('jira.js')
+// Docs: https://mrrefactoring.github.io/jira.js/classes/Version2.Version2Client.html#constructor
 
 /*
 app.setUserTasks([
@@ -67,9 +70,8 @@ app.on('window-all-closed', () => {
 
 
 
-
-const client = new Version3Client({
-  host: 'https://jira.cloudferro.com/',
+const client = new Version2Client({
+  host: 'https://jira-dev.intra.cloudferro.com/',
   authentication: {
     personalAccessToken: process.env.TOKEN,
   },
@@ -86,6 +88,8 @@ const createLoginwindow = () => {
       minWidth: 500,
       webPreferences: {
           preload: path.join(__dirname, 'preload.js'),
+          nodeIntegration: true, // TODO: Check if it is safe
+          contextIsolation: false
       },
       
   });
@@ -97,5 +101,13 @@ const createLoginwindow = () => {
 
 const projects = client
 
-console.log("LOOOOOOOOOOOOOL")
-console.log(client.myself.client.avatars)
+console.log("RESPONSE")
+client.myself.getCurrentUser("cloudferro-users", (users) => {test(users)})
+
+function test(list) {
+  console.log(list);
+}
+
+function authorize(event, data) {
+
+}

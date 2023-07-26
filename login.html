@@ -13,13 +13,13 @@
         <div id="background"><canvas id="can-background"></canvas></div>
         <div id="login" class="window-undrag">
             <h2 class="title">Jira Personal</h2>
+            <form>
+                <label for="jira_url">JIra server url:</label>
+                <input type="text" name="jira_url" id="jira-url-input" placeholder="Jira app url address">
+                <label for="jira-pat">Jira Personal Access Token:</label>
+                <input type="text" name="jira-pat">
+            </form>
         </div>
-        <!-- <div id="side-notes" class="window-drag">
-            <h2 class="window-undrag">Jira Personal <br> Login</h2>
-            <p class="window-undrag">Login using any method to view your jira dashboard</p>
-            <div></div>
-            <p id="say-hello" class="minor-text fixed center bottom"></p>
-        </div> -->
     </div>
 
     <script src="renderer.js"></script>
