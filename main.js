@@ -36,20 +36,21 @@ function createWindow () {
   })
 
   win.loadFile('index.html')
+
+  ipcMain.handle('dark-mode:toggle', () => {
+    if (nativeTheme.shouldUseDarkColors) {
+      nativeTheme.themeSource = 'light'
+    } else {
+      nativeTheme.themeSource = 'dark'
+    }
+    return nativeTheme.shouldUseDarkColors
+  })
+
+  ipcMain.handle('dark-mode:system', () => {
+    nativeTheme.themeSource = 'system'
+  })
+
 }
-
-ipcMain.handle('dark-mode:toggle', () => {
-  if (nativeTheme.shouldUseDarkColors) {
-    nativeTheme.themeSource = 'light'
-  } else {
-    nativeTheme.themeSource = 'dark'
-  }
-  return nativeTheme.shouldUseDarkColors
-})
-
-ipcMain.handle('dark-mode:system', () => {
-  nativeTheme.themeSource = 'system'
-})
 
 app.whenReady().then(() => {
   createWindow()
@@ -87,15 +88,23 @@ const createLoginwindow = () => {
       minHeight: 600,
       minWidth: 500,
       webPreferences: {
-          preload: path.join(__dirname, 'preload.js'),
-          nodeIntegration: true, // TODO: Check if it is safe
-          contextIsolation: false
+          preload: path.join(__dirname, 'preload-login.js'),
+          // nodeIntegration: true, // TODO: Check if it is safe
+          // contextIsolation: false
       },
       
   });
 
   loginwin.loadFile('login.html');
   // loginwin.setResizable(false);
+
+  ipcMain.on('authorize:check', (data) => {
+    console.log(data);
+  })
+
+  ipcMain.on('authorize:login', (data) => {
+    console.log(data);
+  })
 }
 
 

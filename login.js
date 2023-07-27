@@ -1,5 +1,3 @@
-const {ipcRenderer} = require('electron')
-
 /*let backgleft = new Background(document.querySelector("#canleft"));
 backgleft.generate([20, 30], 20);
 // backgleft.draw();

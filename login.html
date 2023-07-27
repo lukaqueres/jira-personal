@@ -13,16 +13,20 @@
         <div id="background"><canvas id="can-background"></canvas></div>
         <div id="login" class="window-undrag">
             <h2 class="title">Jira Personal</h2>
-            <form>
+            <form id="jira-authorize">
                 <label for="jira_url">JIra server url:</label>
                 <input type="text" name="jira_url" id="jira-url-input" placeholder="Jira app url address">
                 <label for="jira-pat">Jira Personal Access Token:</label>
                 <input type="text" name="jira-pat">
+
+                <input type="checkbox" name="jira-remember" id="input-jira-remember">
+                <label for="jira-remember">Remember Token</label>
+                <button type="submit">Authorize</button>
             </form>
         </div>
     </div>
 
-    <script src="renderer.js"></script>
+    <script src="renderer-login.js"></script>
     <script src="background.js"></script>
     <script src="login.js"></script>
 </body>
